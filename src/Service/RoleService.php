@@ -21,15 +21,10 @@ class RoleService
     public function getSubOrdinates(User $givenUser): array
     {
         $givenUserLevel = $givenUser->getRole()->getLevel();
-        $result = [];
-        /* @var $user User */
-        foreach ($this->users as $user) {
-            if ($user->getRole()->getLevel() > $givenUserLevel) {
-                $result[] = $user;
-            }
-        }
 
-        return $result;
+        return array_filter($this->users, function ($user) use ($givenUserLevel) {
+            return $user->getRole()->getLevel() > $givenUserLevel;
+        });
     }
 
 }
