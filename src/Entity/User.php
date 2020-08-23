@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Entity\Role\Role;
+use App\Entity\Role;
 use JsonSerializable;
 
 class User implements JsonSerializable
