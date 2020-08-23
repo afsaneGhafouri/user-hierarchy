@@ -1,11 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Entity\Role;
-use JsonSerializable;
-
-class User implements JsonSerializable
+class User
 {
     private string $name;
     private Role $role;
@@ -34,13 +32,5 @@ class User implements JsonSerializable
     public function setRole(Role $role): void
     {
         $this->role = $role;
-    }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'name' => $this->name,
-            'role' => $this->role->jsonSerialize()
-        ];
     }
 }

@@ -3,9 +3,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use JsonSerializable;
-
-class Role implements JsonSerializable
+class Role
 {
     public const SYSTEM_ADMINISTRATOR_LEVEL = 0;
     public const LOCATION_MANAGER_LEVEL = 1;
@@ -47,14 +45,5 @@ class Role implements JsonSerializable
     public function setParent(?Role $parent): void
     {
         $this->parent = $parent;
-    }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'name' => $this->name,
-            'parent' => $this->parent ? $this->parent->name : null,
-            'level' => $this->level
-        ];
     }
 }
