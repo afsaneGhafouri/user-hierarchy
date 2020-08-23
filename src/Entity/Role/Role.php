@@ -1,10 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Entity\Role;
 
-use JsonSerializable;
-
-abstract class Role implements JsonSerializable
+abstract class Role
 {
     protected string $name;
     protected ?Role $parent;
@@ -35,14 +34,5 @@ abstract class Role implements JsonSerializable
     public function setParent(?Role $parent): void
     {
         $this->parent = $parent;
-    }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'name' => $this->name,
-            'parent' => $this->parent ? $this->parent->name : null,
-            'level' => $this->level
-        ];
     }
 }

@@ -1,10 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace Unit\Service;
 
 use App\Entity\Role\Employee;
 use App\Entity\Role\LocationManager;
-use App\Entity\Role\Role;
 use App\Entity\Role\Supervisor;
 use App\Entity\Role\SystemAdministrator;
 use App\Entity\Role\Trainer;
