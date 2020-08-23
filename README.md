@@ -17,3 +17,11 @@ To make the project up and running, run this command:
 ```
 composer install
 ```
+
+## Test
+
+To run the tests, execute this command:
+
+```
+vendor/bin/phpunit -c phpunit.xml
+```
